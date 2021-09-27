@@ -14,47 +14,29 @@ const App = () => {
   const [inputSearch, setInputSearch] = useState('');
 
   const getInputSearch = (inputValue) => {
-    // console.log(inputValue);
     setInputSearch(inputValue);
   };
 
   const [articles, setArticles] = useState([]);
-
-  // console.log(inputSearch);
+  const [nbArticles, setNbArticles] = useState('');
 
   const loadArticles = () => {
     axios.get(`https://api.github.com/search/repositories?q=${inputSearch}`)
       .then((response) => {
         setArticles(response.data.items);
+        console.log(response);
+        setNbArticles(response.data.total_count);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
-  // console.log(inputSearch);
-  console.log(articles);
-  // console.log(loadArticles);
-
-  // const [filteredArticles, setFilteredArticles] = useState([]);
-
-  // const getFilteredArticles = () => {
-  //   const articlesFiltered = data.items.filter((currentArticle) => {
-  //     const currentArticleLowered = currentArticle.name.toLowerCase();
-  //     const inputSearchLowered = inputSearch.toLowerCase();
-  //     console.log(inputSearchLowered);
-
-  //     return currentArticleLowered.includes(inputSearchLowered);
-  //   });
-
-  //   setFilteredArticles(articlesFiltered);
-  // };
-
+ 
   return (
     <div className="app">
       <img src={githubLogo} alt="github logo" />
       <SearchBar getInput={getInputSearch} loadArticles={loadArticles} />
-      <Message dataCount={data.total_count} />
+      <Message nbArticles={nbArticles} />
       <ReposResults data={articles} />
     </div>
   );
