@@ -3,7 +3,9 @@ import './searchbar.scss';
 import { Input } from 'semantic-ui-react';
 
 const SearchBar = () => (
-  <Input icon="search" iconPosition="left" placeholder="Search..." />
+  <div className="searchBar">
+    <Input icon="search" iconPosition="left" placeholder="Search..." />
+  </div>
 );
 
 export default SearchBar;
