@@ -1,12 +1,15 @@
 // == Import
 import githubLogo from 'src/assets/images/logo-github.png';
 import './styles.css';
+// import 'semantic-ui-css/semantic.min.css';
 
 // == Composant
+import SearchBar from 'src/components/SearchBar';
+
 const App = () => (
   <div className="app">
     <img src={githubLogo} alt="github logo" />
-    <h1>Composant : App</h1>
+    <SearchBar />
   </div>
 );
 
