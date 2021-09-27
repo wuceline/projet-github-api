@@ -1,17 +1,20 @@
 .grid-row{
-  // margin:0.5rem;
+  margin:1rem;
 
 
   .article {
     padding:1rem;
     text-align: left;
+    border: solid 0.5px lightgray;
+    border-radius: 5px;
 
     .article-img {
-      border: solid 0.5px lightgray;
+      width:100%;
     }
 
     .article-text {
       margin-left:1rem;
+      padding-bottom: 2rem;
     }
 
     h1 {

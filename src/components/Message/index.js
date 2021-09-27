@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const MessageComponent = ({ nbArticles, isSearch }) => (
   <Message>
-    <p>
+    <p className="message-content">
       {isSearch ? `La recherche a donné ${nbArticles} résultats` : 'Veuillez lancer une recherche'}
     </p>
   </Message>
