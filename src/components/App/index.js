@@ -6,11 +6,13 @@ import './styles.css';
 // == Composant
 import SearchBar from 'src/components/SearchBar';
 import ReposResults from '../ReposResults';
+import Message from 'src/components/Message';
 
 const App = () => (
   <div className="app">
     <img src={githubLogo} alt="github logo" />
     <SearchBar />
+    <Message />
     <ReposResults />
 
   </div>
