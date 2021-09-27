@@ -14,7 +14,7 @@ const App = () => {
     <div className="app">
       <img src={githubLogo} alt="github logo" />
       <SearchBar />
-      <Message />
+      <Message dataCount={data.total_count} />
       <ReposResults data={data.items} />
     </div>
   );

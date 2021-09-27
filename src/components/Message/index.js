@@ -1,8 +1,8 @@
 import { Message } from 'semantic-ui-react';
 
-const MessageComponent = () => (
+const MessageComponent = ({ dataCount }) => (
   <Message>
-    <p>La recherche a donné XXX résultats</p>
+    <p>La recherche a donné {dataCount} résultats</p>
   </Message>
 );
 
