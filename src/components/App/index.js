@@ -5,13 +5,14 @@ import './styles.css';
 
 // == Composant
 import SearchBar from 'src/components/SearchBar';
-// import ReposResults from '../ReposResults';
+import ReposResults from '../ReposResults';
 
 const App = () => (
   <div className="app">
     <img src={githubLogo} alt="github logo" />
     <SearchBar />
-    {/* <ReposResults data={data} /> */}
+    <ReposResults />
+
   </div>
 );
 
