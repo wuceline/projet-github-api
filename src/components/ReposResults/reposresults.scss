@@ -1,0 +1,32 @@
+.grid-row{
+  // margin:0.5rem;
+
+
+  .article {
+    padding:1rem;
+    text-align: left;
+
+    .article-img {
+      border: solid 0.5px lightgray;
+    }
+
+    .article-text {
+      margin-left:1rem;
+    }
+
+    h1 {
+      font-weight:bold;
+      font-size: 1.4rem;
+      padding-top:1rem;
+      padding-bottom:1rem;
+    }
+
+    em {
+      color:grey;
+    }
+
+    p {
+      padding-top: 1rem;
+    }
+  }
+}
