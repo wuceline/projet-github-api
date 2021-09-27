@@ -4,7 +4,7 @@ import { Input } from 'semantic-ui-react';
 
 const SearchBar = () => (
   <div className="searchBar">
-    <Input icon="search" iconPosition="left" placeholder="Search..." />
+    <Input fluid icon="search" iconPosition="left" placeholder="Search..." />
   </div>
 );
 
