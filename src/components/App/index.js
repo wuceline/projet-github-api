@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import githubLogo from 'src/assets/images/logo-github.png';
 import './styles.css';
-import data from 'src/data/repos';
+// import data from 'src/data/repos';
 import axios from 'axios';
 
 // == Composant
@@ -11,6 +11,13 @@ import Message from 'src/components/Message';
 import ReposResults from '../ReposResults';
 
 const App = () => {
+  const [isSearch, setIsSearch] = useState(false);
+
+  const toggleIsSearch = () => {
+    setIsSearch(!isSearch);
+  };
+  console.log(isSearch);
+
   const [inputSearch, setInputSearch] = useState('');
 
   const getInputSearch = (inputValue) => {
@@ -31,12 +38,16 @@ const App = () => {
         console.log(error);
       });
   };
- 
+
   return (
     <div className="app">
       <img src={githubLogo} alt="github logo" />
-      <SearchBar getInput={getInputSearch} loadArticles={loadArticles} />
-      <Message nbArticles={nbArticles} />
+      <SearchBar
+        getInput={getInputSearch}
+        loadArticles={loadArticles}
+        updateIsSearch={toggleIsSearch}
+      />
+      <Message nbArticles={nbArticles} isSearch={isSearch} />
       <ReposResults data={articles} />
     </div>
   );

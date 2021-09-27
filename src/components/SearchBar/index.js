@@ -3,13 +3,14 @@ import './searchbar.scss';
 import { Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ getInput, loadArticles }) => (
+const SearchBar = ({ getInput, loadArticles, updateIsSearch }) => (
   <div className="searchBar">
     <form
       className="form"
       onSubmit={(event) => {
         event.preventDefault();
         loadArticles();
+        updateIsSearch();
       }}
     >
       <Input
@@ -17,11 +18,6 @@ const SearchBar = ({ getInput, loadArticles }) => (
         icon="search"
         iconPosition="left"
         placeholder="Search..."
-        // onKeyUp={(event) => {
-        //   if (event.key === 'Enter') {
-        //     getInput(event.target.value);
-        //   }
-        // }}
         onChange={(event) => {
           getInput(event.target.value);
         }}
@@ -35,6 +31,7 @@ const SearchBar = ({ getInput, loadArticles }) => (
 SearchBar.propTypes = {
   getInput: PropTypes.func.isRequired,
   loadArticles: PropTypes.func.isRequired,
+  updateIsSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

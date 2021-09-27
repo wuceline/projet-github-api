@@ -1,14 +1,16 @@
 import { Message } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const MessageComponent = ({ nbArticles }) => (
+const MessageComponent = ({ nbArticles, isSearch }) => (
   <Message>
-    <p>La recherche a donné {nbArticles} résultats</p>
+    <p>
+      {isSearch ? `La recherche a donné ${nbArticles} résultats` : 'Veuillez lancer une recherche'}
+    </p>
   </Message>
 );
 
-// MessageComponent.propTypes = {
-//   nbArticles: PropTypes.number.isRequired,
-// };
+MessageComponent.propTypes = {
+  isSearch: PropTypes.bool.isRequired,
+};
 
 export default MessageComponent;
